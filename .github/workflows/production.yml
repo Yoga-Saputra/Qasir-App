@@ -44,4 +44,6 @@ jobs:
           port: ${{ secrets.PORT }}
           script: |
             cd /var/www/Qasir-App
+            git pull origin master
+            composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
             ls -lah
