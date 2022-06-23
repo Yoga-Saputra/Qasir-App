@@ -7,7 +7,7 @@ on:
     branches: ["master"]
 
 jobs:
-  tests:
+  Unit-Test:
     runs-on: ubuntu-latest
 
     steps:
@@ -29,8 +29,8 @@ jobs:
           DB_DATABASE: database/database.sqlite
         run: vendor/bin/phpunit
 
-  deploy:
-    needs: [tests]
+  Deploy-to-Production:
+    needs: [Unit-Test]
 
     runs-on: ubuntu-latest
 
